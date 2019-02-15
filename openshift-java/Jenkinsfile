@@ -3,8 +3,9 @@
 node('rhel7'){
 	stage('Checkout repo') {
 		deleteDir()
-		git url: 'https://github.com/redhat-developer/vscode-openshift-extension-pack/'
-        dir: 'openshift-java'
+		git url: 'https://github.com/jrichter1/vscode-openshift-extension-pack/',
+			branch: "${BRANCH}"
+        	dir: 'openshift-java'
 	}
 
 	stage('Install requirements') {
